@@ -6,19 +6,17 @@
 #    By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/13 22:24:12 by rvrignon          #+#    #+#              #
-#    Updated: 2022/05/13 22:43:07 by rvrignon         ###   ########.fr        #
+#    Updated: 2022/05/13 23:01:44 by rvrignon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-TEST = a.out
+CC = gcc
 
-CC = cc
+CFLAGS = -Wall -Wextra -Werror
 
-CFLAGS = -c -Wall -Wextra -Werror
-
-SRC =  	ft_printf.c
+SRC =  	ft_printf.c main.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -27,7 +25,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(MAKE) all -C libft
 	cp libft/libft.a $(NAME)
-	$(CC) $(CFLAGS) $(SRC)
+	$(CC) $(CFLAGS) $(SRC) $(NAME)
 	ar rc $(NAME) $(OBJ)
 
 %.o: %.c
@@ -44,7 +42,7 @@ clean:
 
 fclean: clean
 	$(MAKE) fclean -C ./libft
-	rm -f $(NAME) $(TEST)
+	rm -f $(NAME) $(TEST) a.out
 
 re: fclean all
 
