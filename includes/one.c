@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 03:09:08 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/05/17 04:01:21 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/05/17 04:23:07 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,3 +44,20 @@ void ft_flag_d(va_list args)
     ft_putstr_fd(a, 1);
     free(a);
 }
+
+void ft_flag_u(va_list args)
+{
+    char *a;
+    int nbr;
+
+    nbr = va_arg(args, int);
+    if ( nbr < 0)
+        ft_putstr_fd("4294967294", 1);
+    else
+    {
+        a = ft_itoa(nbr);
+        ft_putstr_fd(a, 1);
+        free(a);
+    }
+}
+

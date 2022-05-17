@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 22:45:05 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/05/17 03:55:09 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/05/17 04:26:58 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ const char	*get_flag(va_list args, const char *c)
 	else if (*c == 'i')
 		printf("Flag = i");
 	else if (*c == 'u')
-		printf("Flag = u");
+		ft_flag_u(args);
 	else if (*c == 'x')
 		ft_flag_x(args);
 	else if (*c == 'X')
 		ft_flag_X(args);
 	else if (*c == '%')
-		printf("Flag = Hey");
+		ft_flag_pourcent();
 	else
 		return (NULL);
 	return (c);
