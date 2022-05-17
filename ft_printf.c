@@ -23,7 +23,7 @@ const char	*get_flag(va_list args, const char *c)
 	else if (*c == 'd')
 		ft_flag_d(args);
 	else if (*c == 'i')
-		printf("Flag = i");
+		ft_flag_d(args);
 	else if (*c == 'u')
 		ft_flag_u(args);
 	else if (*c == 'x')
