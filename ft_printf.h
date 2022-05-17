@@ -33,7 +33,7 @@ size_t	ft_flag_d(va_list args);
 
 char	*ft_putnbr_base(int nbr, char *base, int j, char *r);
 
-char	*ft_print_pointeur(unsigned long long nbr, char *base, char *str);
+size_t	ft_print_pointeur(unsigned long long nbr, char *base);
 
 int		check_base(char *base);
 

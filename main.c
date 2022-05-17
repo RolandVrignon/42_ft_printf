@@ -29,8 +29,8 @@ int main()
     char *test = "four";
     unsigned int nonsigne = 67;
 
-    int resiii = printf("c = %c || s = %s || p = %p || d : %d || i : %i  || u = %u || x : %x || X : %X || Pourcent : %%\n", manger[0], test, test, -30, -80, nonsigne, 255, 255);
-    int res = ft_printf("c = %c || s = %s || p = %p || d : %d || i : %i  || u = %u || x : %x || X : %X || Pourcent : %%\n", manger[0], test, test, -30, -80, nonsigne, 255, 255);
+    int resiii = printf("c = %c || s = %s || d : %d || i : %i || p = %p || u = %u || x : %x || X : %X || Pourcent : %%\n", manger[0], test, -30, -80, test, nonsigne, 255, 255);
+    int res = ft_printf("c = %c || s = %s || d : %d || i : %i || p = %p || u = %u || x : %x || X : %X || Pourcent : %%\n", manger[0], test, -30, -80, test, nonsigne, 255, 255);
 
     printf("Orignal : %d, ft_printf : %d", resiii, res);
 

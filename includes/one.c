@@ -32,15 +32,15 @@ size_t ft_flag_s(va_list args)
 
 size_t ft_flag_p(va_list args)
 {
-    char *r;
-    char *a;
+    char    *r;
+    size_t  len;
 
+    len = 0;
     ft_putstr_fd("0x", 1);
     r = malloc(sizeof(char) * 40);
-    a = ft_print_pointeur(va_arg(args, unsigned long long int), HEXALOWER, r);
-    ft_putstr_fd(a, 1);
+    len = ft_print_pointeur(va_arg(args, unsigned long long int), HEXALOWER);
     free(r);
-    return (1);
+    return (len + 3);
 }
 
 size_t ft_flag_d(va_list args)
