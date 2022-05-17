@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 22:45:05 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/05/17 03:00:10 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/05/17 03:21:55 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,13 @@
 const char	*get_flag(va_list args, const char *c)
 {
 	if (*c == 'c')
-		printf("Flag = c");
+		ft_flag_c(args);
 	else if (*c == 's')
-		printf("Flag = s");
+		ft_flag_s(args);
 	else if (*c == 'p')
 		printf("Flag = p");
 	else if (*c == 'd')
-	{
-		char *a = ft_itoa(va_arg(args, int));
-		write(1, &a, ft_strlen(a));
-	}
+		ft_flag_d(args);
 	else if (*c == 'i')
 		printf("Flag = i");
 	else if (*c == 'u')
@@ -37,7 +34,6 @@ const char	*get_flag(va_list args, const char *c)
 		printf("Flag = Hey");
 	else
 		return (NULL);
-	c++;
 	return (c);
 }
 

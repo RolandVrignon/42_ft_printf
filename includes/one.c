@@ -1,23 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   one.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/29 17:41:34 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/05/17 03:07:00 by rvrignon         ###   ########.fr       */
+/*   Created: 2022/05/17 03:09:08 by rvrignon          #+#    #+#             */
+/*   Updated: 2022/05/17 03:24:22 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../ft_printf.h"
 
-int	ft_strlen(const char *s)
+void ft_flag_c(va_list args)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+    char a;
+    
+    a = va_arg(args, int);
+    write(1, &a, 1);
 }
+
+void ft_flag_s(va_list args)
+{
+    char *a;
+    int len;
+    
+    a = va_arg(args, char *);
+    len = ft_strlen(a);
+    write(1, &a, len);
+}
+
+void ft_flag_d(va_list args)
+{
+    char *a;
+    int len;
+    
+    a = ft_itoa(va_arg(args, int));
+    len = ft_strlen(a);
+    write(1, &a, len);
+}
+

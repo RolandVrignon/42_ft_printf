@@ -6,7 +6,7 @@
 #    By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/13 22:24:12 by rvrignon          #+#    #+#              #
-#    Updated: 2022/05/13 23:01:44 by rvrignon         ###   ########.fr        #
+#    Updated: 2022/05/17 03:13:23 by rvrignon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,8 @@ NAME = libftprintf.a
 CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
+
+INCLUDES = includes/*.c
 
 SRC =  	ft_printf.c main.c
 
@@ -25,7 +27,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(MAKE) all -C libft
 	cp libft/libft.a $(NAME)
-	$(CC) $(CFLAGS) $(SRC) $(NAME)
+	$(CC) $(CFLAGS) $(SRC) $(INCLUDES) $(NAME)
 	ar rc $(NAME) $(OBJ)
 
 %.o: %.c

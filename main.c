@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 22:26:41 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/05/17 03:00:47 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/05/17 03:22:49 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int main()
     char *manger = "Hello";
     char *test = "four";
 
-    int res = printf("%d manger : %d\n", test_strlen(manger), test_strlen(test));
-    int res2 = ft_printf("%d manger : %d\n", test_strlen(manger), test_strlen(test));
+    int res = printf("string = %s char = %c manger : %d\n", test, manger[0], test_strlen(test));
+    int res2 = ft_printf("string = %s char = %c manger : %d\n", test, manger[0], test_strlen(manger), test_strlen(test));
 
     printf("Orignal : %d, ft_printf : %d", res, res2);
 
