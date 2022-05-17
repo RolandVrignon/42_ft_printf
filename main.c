@@ -29,8 +29,8 @@ int main()
     char *test = "four";
     unsigned int nonsigne = 67;
 
-    int resiii = printf("char = %c || string = %s || decimal : %d || non signe = %u || hexa : %x || HEXA : %X || Pourcent : %%\n", manger[0], test, -30, nonsigne, 255, 255);
-    int res = ft_printf("char = %c || string = %s || decimal : %d || non signe = %u || hexa : %x || HEXA : %X || Pourcent : %%\n", manger[0], test, -30, nonsigne, 255, 255);
+    int resiii = printf("char = %c || string = %s || decimal : %d || pointeur = %p || non signe = %u || hexa : %x || HEXA : %X || Pourcent : %%\n", manger[0], test, -30, test, nonsigne, 255, 255);
+    int res = ft_printf("char = %c || string = %s || decimal : %d || pointeur = %p || non signe = %u || hexa : %x || HEXA : %X || Pourcent : %%\n", manger[0], test, -30, test, nonsigne, 255, 255);
 
     printf("Orignal : %d, ft_printf : %d", resiii, res);
 

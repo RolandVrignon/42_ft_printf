@@ -21,24 +21,32 @@
 # define HEXALOWER	"0123456789abcdef"
 # define HEXAUPPER	"0123456789ABCDEF"
 
-int ft_printf(const char*, ...);
+int		ft_printf(const char*, ...);
 
-void ft_flag_c(va_list args);
+void	ft_flag_c(va_list args);
 
-void ft_flag_s(va_list args);
+void	ft_flag_s(va_list args);
 
-void ft_flag_p(va_list args);
+void	ft_flag_p(va_list args);
 
-void ft_flag_d(va_list args);
+void	ft_flag_d(va_list args);
 
-void ft_flag_i(va_list args);
+char	*ft_putnbr_base(int nbr, char *base, int j, char *r);
 
-void ft_flag_u(va_list args);
+char	*ft_print_pointeur(unsigned long long nbr, char *base, char *str);
 
-void ft_flag_x(va_list args);
+int		check_base(char *base);
 
-void ft_flag_X(va_list args);
+void	ft_flag_p(va_list args);
 
-void ft_flag_pourcent();
+void	ft_flag_i(va_list args);
+
+void	ft_flag_u(va_list args);
+
+void	ft_flag_x(va_list args);
+
+void	ft_flag_X(va_list args);
+
+void	ft_flag_pourcent();
 
 #endif

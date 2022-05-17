@@ -30,10 +30,14 @@ void ft_flag_s(va_list args)
 
 void ft_flag_p(va_list args)
 {
-    // char *a;
-    (void) args;
-    // a = va_arg(args, char *);
-    // ft_putstr_fd(a, 1);
+    char *r;
+    char *a;
+
+    ft_putstr_fd("0x", 1);
+    r = malloc(sizeof(char) * 40);
+    a = ft_print_pointeur(va_arg(args, unsigned long long int), HEXALOWER, r);
+    ft_putstr_fd(a, 1);
+    free(r);
 }
 
 void ft_flag_d(va_list args)

@@ -65,6 +65,20 @@ char	*ft_putnbr_base(int nbr, char *base, int j, char *r)
 	return (r);
 }
 
+char	*ft_print_pointeur(unsigned long long nbr, char *base, char *str)
+{
+	size_t base_len;
+
+	base_len = ft_strlen(base);
+	while (nbr >= 16)
+	{
+		ft_print_pointeur((nbr / base_len), HEXALOWER, str);
+		nbr = nbr % base_len;
+	}
+	write(1, &base[nbr], 1);
+	return (str);
+}
+
 void ft_flag_x(va_list args)
 {
     char *r;
