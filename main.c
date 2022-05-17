@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 22:26:41 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/05/17 03:33:51 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/05/17 04:06:28 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ int main()
     char *manger = "Hello";
     char *test = "four";
 
-    int res = printf("string = %s char = %c manger : %d\n", test, manger[0], test_strlen(test));
-    int res2 = ft_printf("string = %s char = %c manger : %d\n", test, manger[0], test_strlen(test));
+    int resiii = printf("char = %c || string = %s || decimal : %d || hexa : %x || HEXA : %X\n", manger[0], test, test_strlen(test), 255, 255);
+    int res = ft_printf("char = %c || string = %s || decimal : %d || hexa : %x || HEXA : %X\n", manger[0], test, test_strlen(test), 255, 255);
 
-    printf("Orignal : %d, ft_printf : %d", res, res2);
+    printf("Orignal : %d, ft_printf : %d", resiii, res);
 
     return (0); 
 }
