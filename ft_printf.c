@@ -12,42 +12,47 @@
 
 #include "ft_printf.h"
 
-const char	*get_flag(va_list args, const char *c)
+size_t	get_flag(va_list args, const char *c)
 {
+	size_t len;
+	
 	if (*c == 'c')
-		ft_flag_c(args);
+		len = ft_flag_c(args);
 	else if (*c == 's')
-		ft_flag_s(args);
+		len = ft_flag_s(args);
 	else if (*c == 'p')
-		ft_flag_p(args);
+		len = ft_flag_p(args);
 	else if (*c == 'd')
-		ft_flag_d(args);
+		len = ft_flag_d(args);
 	else if (*c == 'i')
-		ft_flag_d(args);
+		len = ft_flag_d(args);
 	else if (*c == 'u')
-		ft_flag_u(args);
+		len = ft_flag_u(args);
 	else if (*c == 'x')
-		ft_flag_x(args);
+		len = ft_flag_x(args);
 	else if (*c == 'X')
-		ft_flag_X(args);
+		len = ft_flag_X(args);
 	else if (*c == '%')
-		ft_flag_pourcent();
+		len = ft_flag_pourcent();
 	else
-		return (NULL);
-	return (c);
+		return (0);
+	return (len);
 }
 
 int ft_printf(const char *format, ...)
 {
-	va_list args;
-	int		len;
+	va_list		args;
+	size_t		len;
 	
 	va_start(args, format);
 	len = 0;
 	while (*format)
 	{
 		if (*format == '%')
-			format = get_flag(args, format + 1);
+		{
+			len += get_flag(args, format + 1);
+			format++;
+		}
 		else
 			write(1, &*format, 1);
 		if (!format)

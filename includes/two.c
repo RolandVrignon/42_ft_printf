@@ -79,29 +79,36 @@ char	*ft_print_pointeur(unsigned long long nbr, char *base, char *str)
 	return (str);
 }
 
-void ft_flag_x(va_list args)
+size_t ft_flag_x(va_list args)
 {
     char *r;
     char *a;
+	size_t len;
     
     r = malloc(sizeof(char) * 40);
     a = ft_putnbr_base(va_arg(args, int), HEXALOWER, 0, r);
+	len = ft_strlen(a);
     ft_putstr_fd(a, 1);
     free (r);
+	return (len);
 }
 
-void ft_flag_X(va_list args)
+size_t ft_flag_X(va_list args)
 {
     char *r;
     char *a;
+	size_t len;
     
     r = malloc(sizeof(char) * 40);
     a = ft_putnbr_base(va_arg(args, int), HEXAUPPER, 0, r);
+	len = ft_strlen(a);
     ft_putstr_fd(a, 1);
     free(r);
+	return (len);
 }
 
-void ft_flag_pourcent()
+size_t ft_flag_pourcent()
 {
     ft_putchar_fd('%', 1);
+	return (1);
 }

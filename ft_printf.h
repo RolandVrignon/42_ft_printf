@@ -23,13 +23,13 @@
 
 int		ft_printf(const char*, ...);
 
-void	ft_flag_c(va_list args);
+size_t	ft_flag_c(va_list args);
 
-void	ft_flag_s(va_list args);
+size_t	ft_flag_s(va_list args);
 
-void	ft_flag_p(va_list args);
+size_t	ft_flag_p(va_list args);
 
-void	ft_flag_d(va_list args);
+size_t	ft_flag_d(va_list args);
 
 char	*ft_putnbr_base(int nbr, char *base, int j, char *r);
 
@@ -37,16 +37,16 @@ char	*ft_print_pointeur(unsigned long long nbr, char *base, char *str);
 
 int		check_base(char *base);
 
-void	ft_flag_p(va_list args);
+size_t	ft_flag_p(va_list args);
 
-void	ft_flag_i(va_list args);
+size_t	ft_flag_i(va_list args);
 
-void	ft_flag_u(va_list args);
+size_t	ft_flag_u(va_list args);
 
-void	ft_flag_x(va_list args);
+size_t	ft_flag_x(va_list args);
 
-void	ft_flag_X(va_list args);
+size_t	ft_flag_X(va_list args);
 
-void	ft_flag_pourcent();
+size_t	ft_flag_pourcent();
 
 #endif
