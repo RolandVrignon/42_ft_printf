@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 03:42:50 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/05/17 04:27:53 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/05/17 04:41:33 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void ft_flag_x(va_list args)
     r = malloc(sizeof(char) * 40);
     a = ft_putnbr_base(va_arg(args, int), HEXALOWER, 0, r);
     ft_putstr_fd(a, 1);
-    // free (r);
+    free (r);
 }
 
 void ft_flag_X(va_list args)
@@ -84,7 +84,7 @@ void ft_flag_X(va_list args)
     r = malloc(sizeof(char) * 40);
     a = ft_putnbr_base(va_arg(args, int), HEXAUPPER, 0, r);
     ft_putstr_fd(a, 1);
-    // free(r);
+    free(r);
 }
 
 void ft_flag_pourcent()

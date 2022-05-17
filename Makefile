@@ -6,7 +6,7 @@
 #    By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/13 22:24:12 by rvrignon          #+#    #+#              #
-#    Updated: 2022/05/17 03:13:23 by rvrignon         ###   ########.fr        #
+#    Updated: 2022/05/17 04:40:32 by rvrignon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-INCLUDES = includes/*.c
+INCLUDES = includes/one.c includes/two.c
 
 SRC =  	ft_printf.c main.c
 
