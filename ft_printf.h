@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 22:14:49 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/05/18 17:19:47 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/05/18 19:07:31 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,31 +24,31 @@
 
 int		ft_printf(const char *format, ...);
 
-size_t	ft_flag_c(va_list args);
+// Flags
 
-size_t	ft_flag_s(va_list args);
+size_t	ft_flag_c(int c);
 
-size_t	ft_flag_p(va_list args);
+size_t	ft_flag_s(char *str);
 
-size_t	ft_flag_d(va_list args);
+size_t	ft_flag_p(void *p);
+
+size_t	ft_flag_d(int nb);
+
+size_t	ft_flag_u(unsigned int nb);
+
+size_t	ft_flag_x(unsigned int nb);
+
+size_t	ft_flag_uppercase_x(unsigned int nb);
+
+size_t	ft_flag_pourcent(void);
+
+// Utils
 
 char	*ft_putnbr_base(unsigned int nbr, char *base, int j, char *r);
 
 size_t	ft_print_pointeur(unsigned long long nbr, char *base);
 
 int		check_base(char *base);
-
-size_t	ft_flag_p(va_list args);
-
-size_t	ft_flag_i(va_list args);
-
-size_t	ft_flag_u(va_list args);
-
-size_t	ft_flag_x(va_list args);
-
-size_t	ft_flag_uppercase_x(va_list args);
-
-size_t	ft_flag_pourcent(void);
 
 void	ft_strrev(char *str);
 

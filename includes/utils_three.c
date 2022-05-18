@@ -6,19 +6,19 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 13:53:26 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/05/18 17:19:30 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/05/18 19:04:10 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-size_t	ft_flag_uppercase_x(va_list args)
+size_t	ft_flag_uppercase_x(unsigned int nb)
 {
 	char	*r;
 	size_t	len;
 
 	r = ft_calloc(sizeof(char), 40);
-	r = ft_putnbr_base(va_arg(args, unsigned int), HEXAUPPER, 0, r);
+	r = ft_putnbr_base(nb, HEXAUPPER, 0, r);
 	len = ft_strlen(r);
 	ft_strrev(r);
 	ft_putstr_fd(r, 1);

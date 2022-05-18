@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 22:45:05 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/05/18 17:59:42 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/05/18 19:03:23 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,21 @@ size_t	get_flag(va_list args, const char *c)
 	if (!c)
 		return (0);
 	else if (*c == 'c')
-		len = ft_flag_c(args);
+		len = ft_flag_c(va_arg(args, int));
 	else if (*c == 's')
-		len = ft_flag_s(args);
+		len = ft_flag_s(va_arg(args, char *));
 	else if (*c == 'p')
-		len = ft_flag_p(args);
+		len = ft_flag_p(va_arg(args, void *));
 	else if (*c == 'd')
-		len = ft_flag_d(args);
+		len = ft_flag_d(va_arg(args, int));
 	else if (*c == 'i')
-		len = ft_flag_d(args);
+		len = ft_flag_d(va_arg(args, int));
 	else if (*c == 'u')
-		len = ft_flag_u(args);
+		len = ft_flag_u(va_arg(args, unsigned int));
 	else if (*c == 'x')
-		len = ft_flag_x(args);
+		len = ft_flag_x(va_arg(args, unsigned int));
 	else if (*c == 'X')
-		len = ft_flag_uppercase_x(args);
+		len = ft_flag_uppercase_x(va_arg(args, unsigned int));
 	else if (*c == '%')
 		len = ft_flag_pourcent();
 	else

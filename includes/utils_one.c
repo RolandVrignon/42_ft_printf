@@ -6,33 +6,27 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 13:53:14 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/05/18 18:03:57 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/05/18 19:06:02 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-size_t	ft_flag_c(va_list args)
+size_t	ft_flag_c(int c)
 {
-	char	a;
-
-	a = va_arg(args, int);
-	write(1, &a, 1);
+	write(1, &c, 1);
 	return (1);
 }
 
-size_t	ft_flag_s(va_list args)
+size_t	ft_flag_s(char *str)
 {
-	void	*a;
-
-	a = va_arg(args, char *);
-	if (!a)
+	if (!str)
 		return (0);
-	ft_putstr_fd(a, 1);
-	return (ft_strlen(a));
+	ft_putstr_fd(str, 1);
+	return (ft_strlen(str));
 }
 
-size_t	ft_flag_p(va_list args)
+size_t	ft_flag_p(void *p)
 {
 	char	*r;
 	size_t	len;
@@ -40,31 +34,29 @@ size_t	ft_flag_p(va_list args)
 	len = 0;
 	ft_putstr_fd("0x", 1);
 	r = malloc(sizeof(char) * 40);
-	len = ft_print_pointeur(va_arg(args, unsigned long long int), HEXALOWER);
+	len = ft_print_pointeur((unsigned long long)p, HEXALOWER);
 	free(r);
 	return (len + 3);
 }
 
-size_t	ft_flag_d(va_list args)
+size_t	ft_flag_d(int nb)
 {
 	char	*a;
 	size_t	len;
 
-	a = ft_itoa(va_arg(args, int));
+	a = ft_itoa(nb);
 	len = ft_strlen(a);
 	ft_putstr_fd(a, 1);
 	free(a);
 	return (len);
 }
 
-size_t	ft_flag_u(va_list args)
+size_t	ft_flag_u(unsigned int nb)
 {
 	char			*a;
-	unsigned int	nbr;
 	size_t			len;
 
-	nbr = va_arg(args, unsigned int);
-	a = itoa_unsigned(nbr);
+	a = itoa_unsigned(nb);
 	len = ft_strlen(a);
 	ft_putstr_fd(a, 1);
 	free(a);

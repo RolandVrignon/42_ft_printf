@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 22:26:41 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/05/18 18:04:57 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/05/18 18:49:09 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,17 @@ int	test_strlen(char *s)
 
 int	main(void)
 {
-	char			*manger;
-	char			*test;
-	unsigned int	nonsigne;
-	int				resiii;
+	// char			*manger;
+	// char			*test;
+	// unsigned int	nonsigne;
+	// int				resiii;
 	int				res;
 
-	manger = "Hello";
-	test = "four";
-	nonsigne = 67;
-	resiii = printf("c = %c || s = %s || d : %d || i : %i || p = %p || u = %u || x : %x || X : %X || Pourcent : %%\n", manger[0], test, -30, -80, test, nonsigne, 255, 255);
-	res = ft_printf("c = %c || s = %s || d : %d || i : %i || p = %p || u = %u || x : %x || X : %X || Pourcent : %%\n", manger[0], test, -30, -80, test, nonsigne, 255, 255);
-	printf("Orignal : %d, ft_printf : %d", resiii, res);
+	// manger = "Hello";
+	// test = "four";
+	// nonsigne = 67;
+	// resiii = printf("c = %c || s = %s || d : %d || i : %i || p = %p || u = %u || x : %x || X : %X || Pourcent : %%\n", manger[0], test, -30, -80, test, nonsigne, 255, 255);
+	res = ft_printf(" NULL %s NULL ", NULL);
+	printf("ft_printf : %d", res);
 	return (0);
 }

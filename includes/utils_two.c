@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 13:53:23 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/05/18 17:19:36 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/05/18 19:04:33 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,13 +108,13 @@ void	ft_strrev(char *str)
 	}
 }
 
-size_t	ft_flag_x(va_list args)
+size_t	ft_flag_x(unsigned int nb)
 {
 	char	*r;
 	size_t	len;
 
 	r = ft_calloc(sizeof(char), 40);
-	r = ft_putnbr_base(va_arg(args, unsigned int), HEXALOWER, 0, r);
+	r = ft_putnbr_base(nb, HEXALOWER, 0, r);
 	len = ft_strlen(r);
 	ft_strrev(r);
 	ft_putstr_fd(r, 1);
