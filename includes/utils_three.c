@@ -6,11 +6,11 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 13:53:26 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/05/18 16:59:17 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/05/18 17:19:30 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 size_t	ft_flag_uppercase_x(va_list args)
 {

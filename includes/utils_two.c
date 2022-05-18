@@ -6,11 +6,11 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 13:53:23 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/05/18 16:44:37 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/05/18 17:19:36 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 int	check_base(char *base)
 {
@@ -90,11 +90,11 @@ size_t	ft_print_pointeur(unsigned long long nbr, char *base)
 	return (i);
 }
 
-void ft_strrev(char *str)
+void	ft_strrev(char *str)
 {
-	int i;
-	int j;
-	char tmp;
+	int		i;
+	int		j;
+	char	tmp;
 
 	i = 0;
 	j = ft_strlen(str) - 1;

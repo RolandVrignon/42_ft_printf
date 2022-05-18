@@ -6,14 +6,14 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 22:14:49 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/05/18 16:59:48 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/05/18 17:19:47 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "../libft/libft.h"
+# include "libft/libft.h"
 # include <stdarg.h>
 # include <stdio.h>
 # include <limits.h>
@@ -22,7 +22,7 @@
 # define HEXALOWER	"0123456789abcdef"
 # define HEXAUPPER	"0123456789ABCDEF"
 
-int		ft_printf(const char*, ...);
+int		ft_printf(const char *format, ...);
 
 size_t	ft_flag_c(va_list args);
 
@@ -50,7 +50,7 @@ size_t	ft_flag_uppercase_x(va_list args);
 
 size_t	ft_flag_pourcent(void);
 
-void    ft_strrev(char *str);
+void	ft_strrev(char *str);
 
 char	*process_unsigned(int j, int len, char *str, unsigned int n);
 

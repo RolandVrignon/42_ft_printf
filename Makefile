@@ -6,7 +6,7 @@
 #    By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/13 22:24:12 by rvrignon          #+#    #+#              #
-#    Updated: 2022/05/18 15:22:53 by rvrignon         ###   ########.fr        #
+#    Updated: 2022/05/18 17:25:51 by rvrignon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRC =  	main.c
+SRC =  	ft_printf.c main.c
 
 OBJ = $(SRC:.c=.o)
 

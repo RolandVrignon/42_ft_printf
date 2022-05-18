@@ -6,11 +6,11 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 13:53:14 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/05/18 16:59:09 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/05/18 17:19:24 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 size_t	ft_flag_c(va_list args)
 {
@@ -56,7 +56,6 @@ size_t	ft_flag_d(va_list args)
 	free(a);
 	return (len);
 }
-
 
 size_t	ft_flag_u(va_list args)
 {

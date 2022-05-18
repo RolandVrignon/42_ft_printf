@@ -6,7 +6,7 @@
 #    By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/18 15:15:57 by rvrignon          #+#    #+#              #
-#    Updated: 2022/05/18 16:31:22 by rvrignon         ###   ########.fr        #
+#    Updated: 2022/05/18 17:25:09 by rvrignon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRC =  	ft_printf.c utils_one.c utils_two.c utils_three.c
+SRC =  utils_one.c utils_two.c utils_three.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -32,7 +32,7 @@ $(NAME): $(OBJ)
 	@echo "\033[0m"
 
 test: all
-	$(CC) $(CFLAGS) main.c $(NAME) -o $(TEST)
+	$(CC) $(CFLAGS) main.c $(NAME)
 
 clean:
 	rm -f $(OBJ)
