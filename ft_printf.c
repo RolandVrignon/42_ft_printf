@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 22:45:05 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/05/18 19:26:33 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/05/18 19:58:29 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,3 +68,20 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (len);
 }
+
+// int	main(void)
+// {
+// 	char			*manger;
+// 	char			*test;
+// 	unsigned int	nonsigne;
+// 	int				resiii;
+// 	int				res;
+
+// 	manger = "Hello";
+// 	test = "four";
+// 	nonsigne = 67;
+// 	resiii = printf("c = %c || s = %s || d : %d || i : %i || p = %p || u = %u || x : %x || X : %X || Pourcent : %%\n", manger[0], test, -30, -80, test, nonsigne, 255, 255);
+// 	res = ft_printf("c = %c || s = %s || d : %d || i : %i || p = %p || u = %u || x : %x || X : %X || Pourcent : %%\n", manger[0], test, -30, -80, test, nonsigne, 255, 255);
+// 	printf("printf : %d, ft_printf : %d", resiii, res);
+// 	return (0);
+// }

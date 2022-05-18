@@ -6,48 +6,35 @@
 #    By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/13 22:24:12 by rvrignon          #+#    #+#              #
-#    Updated: 2022/05/18 17:33:43 by rvrignon         ###   ########.fr        #
+#    Updated: 2022/05/18 22:09:55 by rvrignon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf.a
+SRC =  	ft_printf.c includes/utils_one.c includes/utils_two.c includes/utils_three.c
 
-CC = gcc
+OBJ		=	$(SRC:.c=.o)
 
-CFLAGS = -Wall -Wextra -Werror
+CC		=	gcc
+RM		=	rm -f
+CFLAGS	=	-Wall -Werror -Wextra
 
-SRC =  	ft_printf.c main.c
+NAME	=	libftprintf.a
 
-OBJ = $(SRC:.c=.o)
+all:		$(NAME)
 
-all: $(NAME)
+$(NAME):	$(OBJ)
+			$(MAKE) all -C libft
+			cp libft/libft.a $(NAME)
+			ar rcs $(NAME) $(OBJ)
 
-$(NAME): $(OBJ)
-	$(MAKE) all -C libft
-	cp libft/libft.a includes/includes.a
-	$(MAKE) all -C includes
-	cp includes/includes.a $(NAME)
-	$(CC) $(CFLAGS) $(SRC) $(NAME)
-	ar rc $(NAME) $(OBJ)
+clean:		
+			$(MAKE) clean -C ./libft
+			$(RM) $(OBJ)
 
-%.o: %.c
-	@echo "Generating obj..."
-	$(CC) -c $(CFLAGS) $^
-	@echo "\033[0m"
+fclean:		clean
+			$(MAKE) fclean -C ./libft
+			$(RM) $(NAME)
 
-test: all
-	$(CC) $(CFLAGS) $(NAME) -o $(TEST)
+re:			fclean $(NAME)
 
-clean:
-	$(MAKE) clean -C ./libft
-	$(MAKE) clean -C ./includes
-	rm -f $(OBJ)
-
-fclean: clean
-	$(MAKE) fclean -C ./libft
-	$(MAKE) fclean -C ./includes
-	rm -f $(NAME) $(TEST) a.out *.o
-
-re: fclean all
-
-bonus :
+.PHONY:		all clean fclean re
