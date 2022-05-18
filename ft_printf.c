@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 22:45:05 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/05/18 19:22:05 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/05/18 19:26:33 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	ft_printf(const char *format, ...)
 {
 	va_list		args;
 	size_t		len;
-	int		status;
+	int			status;
 
 	va_start(args, format);
 	len = 0;
@@ -55,10 +55,7 @@ int	ft_printf(const char *format, ...)
 		{
 			status = get_flag(args, format + 1);
 			if (status == -1)
-			{
-				va_end(args);
-				return (len);
-			}
+				break ;
 			else
 				len += status - 1;
 			format++;
