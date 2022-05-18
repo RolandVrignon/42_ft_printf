@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 22:45:05 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/05/18 13:58:18 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/05/18 17:59:42 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ size_t	get_flag(va_list args, const char *c)
 {
 	size_t	len;
 
-	if (*c == 'c')
+	if (!c)
+		return (0);
+	else if (*c == 'c')
 		len = ft_flag_c(args);
 	else if (*c == 's')
 		len = ft_flag_s(args);
@@ -50,7 +52,7 @@ int	ft_printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			len += get_flag(args, format + 1) - 1;
+			len += (get_flag(args, format + 1) - 1);
 			format++;
 		}
 		else

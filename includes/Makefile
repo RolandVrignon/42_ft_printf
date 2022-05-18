@@ -6,7 +6,7 @@
 #    By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/18 15:15:57 by rvrignon          #+#    #+#              #
-#    Updated: 2022/05/18 17:25:09 by rvrignon         ###   ########.fr        #
+#    Updated: 2022/05/18 17:32:23 by rvrignon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ $(NAME): $(OBJ)
 	@echo "\033[0m"
 
 test: all
-	$(CC) $(CFLAGS) main.c $(NAME)
+	$(CC) $(CFLAGS) $(NAME)
 
 clean:
 	rm -f $(OBJ)

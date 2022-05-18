@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 13:53:14 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/05/18 17:19:24 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/05/18 18:03:57 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_flag_c(va_list args)
 
 size_t	ft_flag_s(va_list args)
 {
-	char	*a;
+	void	*a;
 
 	a = va_arg(args, char *);
 	if (!a)

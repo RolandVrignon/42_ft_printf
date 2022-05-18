@@ -6,7 +6,7 @@
 #    By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/13 22:24:12 by rvrignon          #+#    #+#              #
-#    Updated: 2022/05/18 17:25:51 by rvrignon         ###   ########.fr        #
+#    Updated: 2022/05/18 17:33:43 by rvrignon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ $(NAME): $(OBJ)
 	@echo "\033[0m"
 
 test: all
-	$(CC) $(CFLAGS) main.c $(NAME) -o $(TEST)
+	$(CC) $(CFLAGS) $(NAME) -o $(TEST)
 
 clean:
 	$(MAKE) clean -C ./libft
