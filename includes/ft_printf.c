@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 22:45:05 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/05/17 04:26:58 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/05/18 13:58:18 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 size_t	get_flag(va_list args, const char *c)
 {
-	size_t len;
-	
+	size_t	len;
+
 	if (*c == 'c')
 		len = ft_flag_c(args);
 	else if (*c == 's')
@@ -31,7 +31,7 @@ size_t	get_flag(va_list args, const char *c)
 	else if (*c == 'x')
 		len = ft_flag_x(args);
 	else if (*c == 'X')
-		len = ft_flag_X(args);
+		len = ft_flag_uppercase_x(args);
 	else if (*c == '%')
 		len = ft_flag_pourcent();
 	else
@@ -39,11 +39,11 @@ size_t	get_flag(va_list args, const char *c)
 	return (len);
 }
 
-int ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
 	va_list		args;
 	size_t		len;
-	
+
 	va_start(args, format);
 	len = 0;
 	while (*format)
@@ -58,7 +58,7 @@ int ft_printf(const char *format, ...)
 		if (!format)
 		{
 			va_end(args);
-			return(len);
+			return (len);
 		}
 		format++;
 		len++;

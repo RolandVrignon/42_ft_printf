@@ -6,14 +6,14 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 22:14:49 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/05/17 04:27:04 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/05/18 14:18:11 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "libft/libft.h"
+# include "../libft/libft.h"
 # include <stdarg.h>
 # include <stdio.h>
 
@@ -45,8 +45,8 @@ size_t	ft_flag_u(va_list args);
 
 size_t	ft_flag_x(va_list args);
 
-size_t	ft_flag_X(va_list args);
+size_t	ft_flag_uppercase_x(va_list args);
 
-size_t	ft_flag_pourcent();
+size_t	ft_flag_pourcent(void);
 
 #endif

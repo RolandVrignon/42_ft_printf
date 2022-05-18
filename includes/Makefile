@@ -5,30 +5,26 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/05/13 22:24:12 by rvrignon          #+#    #+#              #
-#    Updated: 2022/05/18 15:22:53 by rvrignon         ###   ########.fr        #
+#    Created: 2022/05/18 15:15:57 by rvrignon          #+#    #+#              #
+#    Updated: 2022/05/18 15:18:56 by rvrignon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf.a
+NAME = includes.a
 
 CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRC =  	main.c
+SRC =  	ft_printf.c utils_one.c utils_two.c utils_three.c
 
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(MAKE) all -C libft
-	cp libft/libft.a includes/includes.a
-	$(MAKE) all -C includes
-	cp includes/includes.a $(NAME)
-	$(CC) $(CFLAGS) $(SRC) $(NAME)
-	ar rc $(NAME) $(OBJ)
+	ar rc $(NAME) $^
+	ranlib $(NAME)
 
 %.o: %.c
 	@echo "Generating obj..."
@@ -39,13 +35,9 @@ test: all
 	$(CC) $(CFLAGS) main.c $(NAME) -o $(TEST)
 
 clean:
-	$(MAKE) clean -C ./libft
-	$(MAKE) clean -C ./includes
 	rm -f $(OBJ)
 
 fclean: clean
-	$(MAKE) fclean -C ./libft
-	$(MAKE) fclean -C ./includes
 	rm -f $(NAME) $(TEST) a.out *.o
 
 re: fclean all

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   two.c                                              :+:      :+:    :+:   */
+/*   utils_two.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/17 03:42:50 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/05/17 04:41:33 by rvrignon         ###   ########.fr       */
+/*   Created: 2022/05/18 13:53:23 by rvrignon          #+#    #+#             */
+/*   Updated: 2022/05/18 14:16:07 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "ft_printf.h"
 
 int	check_base(char *base)
 {
@@ -38,9 +38,9 @@ int	check_base(char *base)
 
 char	*ft_putnbr_base(int nbr, char *base, int j, char *r)
 {
-	int			i;
-	long		nb;
-	char		test;
+	int		i;
+	long	nb;
+	char	test;
 
 	i = check_base(base);
 	nb = nbr;
@@ -67,9 +67,9 @@ char	*ft_putnbr_base(int nbr, char *base, int j, char *r)
 
 size_t	ft_print_pointeur(unsigned long long nbr, char *base)
 {
-	size_t base_len;
-	size_t i;
-	unsigned long long copy;
+	size_t				base_len;
+	size_t				i;
+	unsigned long long	copy;
 
 	i = 0;
 	copy = nbr;
@@ -88,36 +88,16 @@ size_t	ft_print_pointeur(unsigned long long nbr, char *base)
 	return (i);
 }
 
-size_t ft_flag_x(va_list args)
+size_t	ft_flag_x(va_list args)
 {
-    char *r;
-    char *a;
-	size_t len;
-    
-    r = malloc(sizeof(char) * 40);
-    a = ft_putnbr_base(va_arg(args, int), HEXALOWER, 0, r);
-	len = ft_strlen(a);
-    ft_putstr_fd(a, 1);
-    free (r);
-	return (len);
-}
+	char	*r;
+	char	*a;
+	size_t	len;
 
-size_t ft_flag_X(va_list args)
-{
-    char *r;
-    char *a;
-	size_t len;
-    
-    r = malloc(sizeof(char) * 40);
-    a = ft_putnbr_base(va_arg(args, int), HEXAUPPER, 0, r);
+	r = malloc(sizeof(char) * 40);
+	a = ft_putnbr_base(va_arg(args, int), HEXALOWER, 0, r);
 	len = ft_strlen(a);
-    ft_putstr_fd(a, 1);
-    free(r);
+	ft_putstr_fd(a, 1);
+	// free (r);
 	return (len);
-}
-
-size_t ft_flag_pourcent()
-{
-    ft_putchar_fd('%', 1);
-	return (1);
 }
