@@ -6,18 +6,18 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 22:45:05 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/05/18 19:03:23 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/05/18 19:22:05 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	get_flag(va_list args, const char *c)
+int	get_flag(va_list args, const char *c)
 {
-	size_t	len;
+	int	len;
 
 	if (!c)
-		return (0);
+		len = -1;
 	else if (*c == 'c')
 		len = ft_flag_c(va_arg(args, int));
 	else if (*c == 's')
@@ -37,7 +37,7 @@ size_t	get_flag(va_list args, const char *c)
 	else if (*c == '%')
 		len = ft_flag_pourcent();
 	else
-		return (0);
+		len = -1;
 	return (len);
 }
 
@@ -45,6 +45,7 @@ int	ft_printf(const char *format, ...)
 {
 	va_list		args;
 	size_t		len;
+	int		status;
 
 	va_start(args, format);
 	len = 0;
@@ -52,16 +53,18 @@ int	ft_printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			len += (get_flag(args, format + 1) - 1);
+			status = get_flag(args, format + 1);
+			if (status == -1)
+			{
+				va_end(args);
+				return (len);
+			}
+			else
+				len += status - 1;
 			format++;
 		}
 		else
 			write(1, &*format, 1);
-		if (!format)
-		{
-			va_end(args);
-			return (len);
-		}
 		format++;
 		len++;
 	}

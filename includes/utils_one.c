@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 13:53:14 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/05/18 19:06:02 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/05/18 19:20:22 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_flag_c(int c)
 size_t	ft_flag_s(char *str)
 {
 	if (!str)
-		return (0);
+		return (-1);
 	ft_putstr_fd(str, 1);
 	return (ft_strlen(str));
 }
@@ -31,6 +31,8 @@ size_t	ft_flag_p(void *p)
 	char	*r;
 	size_t	len;
 
+	if (!p)
+		return (-1);
 	len = 0;
 	ft_putstr_fd("0x", 1);
 	r = malloc(sizeof(char) * 40);
