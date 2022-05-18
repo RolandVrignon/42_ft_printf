@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 13:53:23 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/05/18 14:16:07 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/05/18 16:44:37 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	check_base(char *base)
 	return (i);
 }
 
-char	*ft_putnbr_base(int nbr, char *base, int j, char *r)
+char	*ft_putnbr_base(unsigned int nbr, char *base, int j, char *r)
 {
 	int		i;
 	long	nb;
@@ -72,6 +72,8 @@ size_t	ft_print_pointeur(unsigned long long nbr, char *base)
 	unsigned long long	copy;
 
 	i = 0;
+	if (!nbr)
+		return (0);
 	copy = nbr;
 	while (copy >= 16)
 	{	
@@ -88,16 +90,34 @@ size_t	ft_print_pointeur(unsigned long long nbr, char *base)
 	return (i);
 }
 
+void ft_strrev(char *str)
+{
+	int i;
+	int j;
+	char tmp;
+
+	i = 0;
+	j = ft_strlen(str) - 1;
+	while (i < j)
+	{
+		tmp = str[i];
+		str[i] = str[j];
+		str[j] = tmp;
+		i++;
+		j--;
+	}
+}
+
 size_t	ft_flag_x(va_list args)
 {
 	char	*r;
-	char	*a;
 	size_t	len;
 
-	r = malloc(sizeof(char) * 40);
-	a = ft_putnbr_base(va_arg(args, int), HEXALOWER, 0, r);
-	len = ft_strlen(a);
-	ft_putstr_fd(a, 1);
-	// free (r);
+	r = ft_calloc(sizeof(char), 40);
+	r = ft_putnbr_base(va_arg(args, unsigned int), HEXALOWER, 0, r);
+	len = ft_strlen(r);
+	ft_strrev(r);
+	ft_putstr_fd(r, 1);
+	free(r);
 	return (len);
 }

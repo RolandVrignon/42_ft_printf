@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 13:53:14 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/05/18 14:15:59 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/05/18 16:59:09 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ size_t	ft_flag_s(va_list args)
 	char	*a;
 
 	a = va_arg(args, char *);
+	if (!a)
+		return (0);
 	ft_putstr_fd(a, 1);
 	return (ft_strlen(a));
 }
@@ -55,25 +57,18 @@ size_t	ft_flag_d(va_list args)
 	return (len);
 }
 
+
 size_t	ft_flag_u(va_list args)
 {
-	char	*a;
-	int		nbr;
-	size_t	len;
+	char			*a;
+	unsigned int	nbr;
+	size_t			len;
 
-	nbr = va_arg(args, int);
-	if (nbr < 0)
-	{
-		ft_putstr_fd("4294967294", 1);
-		return (10);
-	}
-	else
-	{
-		a = ft_itoa(nbr);
-		len = ft_strlen(a);
-		ft_putstr_fd(a, 1);
-		free(a);
-		return (len);
-	}
+	nbr = va_arg(args, unsigned int);
+	a = itoa_unsigned(nbr);
+	len = ft_strlen(a);
+	ft_putstr_fd(a, 1);
+	free(a);
+	return (len);
 	return (0);
 }

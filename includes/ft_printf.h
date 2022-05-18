@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 22:14:49 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/05/18 14:18:11 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/05/18 16:59:48 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "../libft/libft.h"
 # include <stdarg.h>
 # include <stdio.h>
+# include <limits.h>
 
 // # define PRINTF_VALID_FORMATS	"cspdiuxX\%"
 # define HEXALOWER	"0123456789abcdef"
@@ -31,7 +32,7 @@ size_t	ft_flag_p(va_list args);
 
 size_t	ft_flag_d(va_list args);
 
-char	*ft_putnbr_base(int nbr, char *base, int j, char *r);
+char	*ft_putnbr_base(unsigned int nbr, char *base, int j, char *r);
 
 size_t	ft_print_pointeur(unsigned long long nbr, char *base);
 
@@ -48,5 +49,11 @@ size_t	ft_flag_x(va_list args);
 size_t	ft_flag_uppercase_x(va_list args);
 
 size_t	ft_flag_pourcent(void);
+
+void    ft_strrev(char *str);
+
+char	*process_unsigned(int j, int len, char *str, unsigned int n);
+
+char	*itoa_unsigned(unsigned int n);
 
 #endif
